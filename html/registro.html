@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Registro</title>
+</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<style type="text/css">
+	body{
+	 	 background-image: url("../img/fondo.png");
+	            height: 100%;
+		}
+
+	@each $state, $data in $form-validation-states {
+  @include form-validation-state($state, $data...);
+}
+  </style>
+<body>
+
+
+<br><br>
+	<p class="text-center h2">Registro</p>
+<br><br>	
+<form class="row g-3 needs-validation" novalidate>
+  <div class="col-md-4 position-relative">
+    <label for="validationTooltip01" class="form-label">Nombre(s)</label>
+    <input type="text" class="form-control" id="validationTooltip01" value="Mark" required>
+    <div class="valid-tooltip">
+      Looks good!
+    </div>
+  </div>
+
+
+  <div class="col-md-4 position-relative">
+    <label for="validationTooltip02" class="form-label">Apellidos</label>
+    <input type="text" class="form-control" id="validationTooltip02" value="Otto" required>
+    <div class="valid-tooltip">
+      Looks good!
+    </div>
+  </div>
+
+
+  <div class="col-md-4 position-relative">
+    <label for="validationTooltipUsername" class="form-label">Nombre de usuario</label>
+    <div class="input-group has-validation">
+      <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+      <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
+      <div class="invalid-tooltip">
+        Ese nombre de usuario ya esta en uso o es inválido.
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-6 position-relative">
+    <label for="validationTooltip04" class="form-label">Estado</label>
+    <select class="form-select" id="validationTooltip04" required>
+      <option selected disabled value="">Seleccione...</option>
+      <option>Aguascalientes</option>
+      <option>Baja California</option>
+      <option>Baja California Sur</option>
+      <option>Campeche</option>
+      <option>Chiapas</option>
+      <option>Chihuahua</option>
+      <option>Ciudad de México</option>
+      <option>Coahuila</option>
+      <option>Colima</option>
+      <option>Durango</option>
+      <option>Guanajuato</option>
+      <option>Guerrero</option>
+      <option>Hidalgo</option>
+      <option>Jalisco</option>
+      <option>México</option>
+      <option>Michoacán</option>
+      <option>Morelos</option>
+      <option>Nayarit</option>
+      <option>Nuevo León</option>
+      <option>Oaxaca</option>
+      <option>Puebla</option>
+      <option>Querétaro</option>
+      <option>Quintana Roo</option>
+      <option>San Luis Potosí</option>
+      <option>Sinaloa</option>
+      <option>Sonora</option>
+      <option>Tabasco</option>
+      <option>Tamaulipas</option>
+      <option>Tlaxcala</option>
+      <option>Veracruz </option>
+      <option>Yucatán</option>
+      <option>Zacatecas</option>
+    </select>
+    <div class="invalid-tooltip">
+      Por favor seleccione un estado.
+    </div>
+  </div>
+
+
+  <div class="col-md-3 position-relative">
+    <label for="validationTooltip05" class="form-label">Municipio</label>
+    <select class="form-select" id="validationTooltip05" required>
+      <option selected disabled value="">Seleccione...</option>
+      <option>...</option>
+    </select>
+    <div class="invalid-tooltip">
+      Por favor seleccione un Municipio.
+    </div>
+  </div>
+
+
+  <div class="col-md-3 position-relative">
+    <label for="validationTooltip06" class="form-label">¿Estas viviendo en el extranjero?</label>
+    <select class="form-select" id="validationTooltip06" required>
+      <option selected disabled value="">Seleccione...</option>
+      <option>SI</option>
+      <option>NO</option>
+    </select>
+    <div class="invalid-tooltip">
+      Por favor seleccione una opción.
+    </div>
+  </div>
+
+
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Enviar</button>
+  </div>
+</form>
+
+
+
+
+
+
+
+<script type="text/javascript">
+$form-validation-states: (
+  "valid": (
+    "color": $form-feedback-valid-color,
+    "icon": $form-feedback-icon-valid
+  ),
+  "invalid": (
+    "color": $form-feedback-invalid-color,
+    "icon": $form-feedback-icon-invalid
+  )
+);
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
