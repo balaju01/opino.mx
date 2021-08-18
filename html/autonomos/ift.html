@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Organísmos Autónomos</title>
+</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style type="text/css">
+	body{
+	 	 background-image: url("../../img/fondo.png");
+	            height: 100%;
+		}
+	.list-group-item {
+      background-image: transparent;
+      background-color: transparent;
+    }
+  </style>
+<body>
+
+	<div class="container mt-3 text-center">
+		  <h2>Organísmos Autónomos</h2>
+		  <h3>Opina sobre la institucion y sus representantes</h3>
+		  <br>
+		  <input class="form-control" id="myInput" type="text" placeholder="Busca al funcionario...">
+		  <br>
+		  <ul class="list-group text-center" id="myList">
+		  
+			<li class="list-group-item"> <a href="#" class="list-group-item list-group-item-action"><p class="h3">Instituto Federal de Telecomunicaciones</p><img class="img-fluid mx-auto d-block" alt="Responsive image" style="width: 300px; height: 150px;" src="../../img/autonomos/ift/ift.jpg"></a></li>
+
+
+			
+		    <li class="list-group-item"> <a href="#" class="list-group-item list-group-item-action"><p class="h3">Adolfo Cuevas Teja</p><img class="img-fluid mx-auto d-block  rounded-circle" alt="Responsive image" style="width: 175px; height: 150px;" src="../../img/autonomos/ift/ift1.jpg"><p class="h3">Comisionado Presidente Interino</p></a></li>
+
+
+		  </ul> 
+	</div>
+  <script>
+	$(document).ready(function(){
+	  $("#myInput").on("keyup", function() {
+	    var value = $(this).val().toLowerCase();
+	    $("#myList li").filter(function() {
+	      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+	    });
+	  });
+	});
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
