@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Tienda</title>
+</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<style type="text/css">
+  body{
+     background-image: url("../../img/fondo.png");
+              height: 100%;
+    }
+  </style>
+<body>
+
+
+  <br><br>
+    <p class="h1 text-primary text-center">Adquirir una encuesta</p>
+    <br>
+
+ 
+<div class=" text-center">
+  <table class="table">
+    <td class="table-active"><p class="h4">*Nombre encuesta*</p></td>
+</table>
+</div>
+<br>
+
+
+    <p class="h5">&nbsp;&nbsp;Por favor selecciones los datos que le interesan de ésta encuesta:</p>
+  <br>
+<table class="table  table-bordered">
+  <h5 class="text-primary">&nbsp;&nbsp;Termporalidad</h5>
+  <tr class="h6">
+      <td>&nbsp;&nbsp;<input type="radio" tu-attr-precio="100" class="mis-checkboxes" /> Última semana</td>
+      <td><input type="radio" tu-attr-precio="100" class="mis-checkboxes" /> Últimas 2 semanas</td>
+      <td><input type="radio" tu-attr-precio="100" class="mis-checkboxes" /> Último mes</td>
+  </tr>
+  <tr class="h6">
+      <td>&nbsp;&nbsp;<input type="radio" tu-attr-precio="100" class="mis-checkboxes" />Últimos 2 meses</td>
+      <td><input type="radio" tu-attr-precio="100" class="mis-checkboxes" />Últimos 3 meses</td>
+      <td><input type="radio" tu-attr-precio="100" class="mis-checkboxes" />Últimos 6 meses</td>  
+  </tr>
+</table>
+<br><br>
+
+
+
+<table class="table  table-bordered">
+   <h5 class="text-primary">&nbsp;&nbsp;Ubicación</h5>
+  <tr class="h6"> 
+      <td>&nbsp;&nbsp;<input type="radio" tu-attr-precio="100" class="mis-checkboxes" />Nacional</td>
+      <td><input type="radio" tu-attr-precio="100" class="mis-checkboxes" />Estatal</td>
+      <td>
+<div class="col-md-3 position-relative">
+    <select class="form-select">
+      <option selected disabled value="">Seleccione...</option>
+      <option>*Estados*</option>
+    </select>
+  </div>
+  </td>
+  </tr>
+</table>
+<br><br>
+
+
+
+<table class="table  table-bordered">
+  <h5 class="text-primary">&nbsp;&nbsp;Demográficos</h5>
+  <tr class="h6">
+      <td>&nbsp;&nbsp;<input type="checkbox" tu-attr-precio="100" class="mis-checkboxes" /> Genero</td>
+      <td><input type="checkbox" tu-attr-precio="100" class="mis-checkboxes" />Edades</td>
+      <td><input type="checkbox" tu-attr-precio="100" class="mis-checkboxes" />Nivel educativo</td>
+  </tr>
+  <tr class="h6">
+      <td>&nbsp;&nbsp;<input type="checkbox" tu-attr-precio="100" class="mis-checkboxes" />Mexicanos en el extranjero</td>
+      <td><input type="checkbox" tu-attr-precio="100" class="mis-checkboxes"/>Extranjeros en México</td>
+      <td><input type="checkbox" tu-attr-precio="100" class="mis-checkboxes"/>Ocupación</td>  
+  </tr>
+</table>
+<br><br>
+
+
+
+<div>
+&nbsp; <label><strong>Total&nbsp;&nbsp;</strong><label>
+<div>
+<input id="total" type="text" readonly class="form-control-plaintext" placeholder="$0.00"/>
+</div>
+</div>
+
+
+<br><br><br><br>
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+  
+$(document).ready(function() {
+ 
+ $(document).on('click keyup','.mis-checkboxes,.mis-adicionales',function() {
+   calcular();
+ });
+
+});
+
+function calcular() {
+  var tot = $('#total');
+  tot.val(0);
+  $('.mis-checkboxes').each(function() {
+    if($(this).hasClass('mis-checkboxes')) {
+      tot.val(($(this).is(':checked') ? parseFloat($(this).attr('tu-attr-precio')) : 0) + parseFloat(tot.val()));  
+    }
+    else {
+      tot.val(parseFloat(tot.val()) + (isNaN(parseFloat($(this).val())) ? 0 : parseFloat($(this).val())));
+    }
+  });
+  var totalParts = parseFloat(tot.val()).toFixed(2).split('.');
+  tot.val('$' + totalParts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '.' +  (totalParts.length > 1 ? totalParts[1] : '00'));  
+}
+
+</script>
+
+
+</body>
+</html>
